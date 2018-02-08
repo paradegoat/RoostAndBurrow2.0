@@ -15,6 +15,7 @@ class BlogsController < ApplicationController
   # GET /blogs/new
   def new
     @blog = Blog.new
+    3.times { @blog.blog_contents.build }
   end
 
   # GET /blogs/1/edit
@@ -24,7 +25,7 @@ class BlogsController < ApplicationController
   # POST /blogs
   # POST /blogs.json
   def create
-    @blog = Blog.new(blog_params)
+    @blog = Blog.new(params.require(:blog).permit(:title, :subtitle, blog_contents_attributes: [:main_image, :thumb_image, :body]))
 
     respond_to do |format|
       if @blog.save

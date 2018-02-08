@@ -21,6 +21,23 @@
     <%= form.text_area :subtitle, id: :blog_subtitle %>
   </div>
 
+  <ul>
+   <%= form.fields_for :blog_contents do |blog_contents_form| %>
+     <li>
+       <%= blog_contents_form.label :main_image %>
+       <%= blog_contents_form.text_field :main_image %>
+     </li>
+     <li>
+       <%= blog_contents_form.label :thumb_image %>
+       <%= blog_contents_form.text_field :thumb_image %>
+     </li>
+     <li>
+       <%= blog_contents_form.label :body %>
+       <%= blog_contents_form.text_field :body %>
+     </li>
+   <% end %>
+ </ul>
+
   <div class="actions">
     <%= form.submit %>
   </div>

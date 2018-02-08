@@ -10,5 +10,13 @@
   <%= @blog.subtitle %>
 </p>
 
+<h2>pics and words:</h2>
+
+<% @blog.blog_contents.each do |t| %>
+<%= image_tag t.main_image %>
+<p><%= t.body %></p>
+
+<% end %>
+
 <%= link_to 'Edit', edit_blog_path(@blog) %> |
 <%= link_to 'Back', blogs_path %>
