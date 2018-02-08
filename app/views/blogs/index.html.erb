@@ -5,7 +5,7 @@
 
     <% @blogs.each do |blog| %>
 
-        <p>title: <%= blog.title %></p>
+        <p>title: <%= link_to blog.title, blog_show_path(blog) %></p>
         <p>subtitle: <%= blog.subtitle %></p>
         <h2>pics and words:</h2>
 
@@ -14,8 +14,7 @@
           <p>picture caption: <%= t.body %></p>
         <% end %>
 
-        <%= link_to 'Show', blog %>
-        <%= link_to 'Edit', edit_blog_path(blog) %>
+        <%= link_to 'Edit', blog_edit_path(blog) %>
         <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
 
     <% end %>
