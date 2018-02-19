@@ -1,6 +1,7 @@
 
 
     <h1>title: <%= link_to blog.title, blog_show_path(blog) %></h1>
+    <td>Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</td>
     <p>subtitle: <%= blog.subtitle %></p>
     <p><%= link_to blog.status, toggle_status_blog_path(blog) %></p>
     <h2>pics and words:</h2>
