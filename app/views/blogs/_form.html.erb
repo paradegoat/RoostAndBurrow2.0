@@ -21,6 +21,17 @@
     <%= form.text_area :subtitle, id: :blog_subtitle %>
   </div>
 
+  <div class="form-group">
+   <%= form.label :topic_id %>
+   <%= form.collection_select(:topic_id, Topic.all, :id, :title,
+                             {
+                               include_blank: true
+                             },
+                             class: 'form-control'
+                           )
+   %>
+ </div>
+
   <ul>
    <%= form.fields_for :blog_contents do |blog_contents_form| %>
      <li>
