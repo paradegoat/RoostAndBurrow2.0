@@ -3,22 +3,7 @@
 <h1>Blogs</h1>
 
 
-    <% @blogs.each do |blog| %>
-
-        <p>title: <%= link_to blog.title, blog_show_path(blog) %></p>
-        <p>subtitle: <%= blog.subtitle %></p>
-        <p><%= link_to blog.status, toggle_status_blog_path(blog) %></p>
-        <h2>pics and words:</h2>
-
-        <% blog.blog_contents.each do |t| %>
-          <%= image_tag t.main_image %>
-          <p>picture caption: <%= t.body %></p>
-        <% end %>
-
-        <%= link_to 'Edit', blog_edit_path(blog) %>
-        <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-    <% end %>
+    <%= render @blogs %>
 
 <br>
 
