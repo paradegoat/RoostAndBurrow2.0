@@ -1,6 +1,7 @@
 class Blog < ApplicationRecord
   validates_presence_of :title, :subtitle
-  has_many :blog_contents
+
+  has_many :blog_contents, dependent: :destroy
   belongs_to :topic
   accepts_nested_attributes_for :blog_contents,
                                 allow_destroy: true,
@@ -9,4 +10,5 @@ class Blog < ApplicationRecord
   enum status: { draft: 0, published: 1 }
   extend FriendlyId
   friendly_id :title, use: :slugged
+
 end

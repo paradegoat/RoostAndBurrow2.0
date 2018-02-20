@@ -1,22 +1,23 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @blog.title %>
-</p>
+<div class="container portfolio-container">
+  <p>
+    <strong>Title:</strong>
+    <%= @blog.title %>
+  </p>
 
-<p>
-  <strong>Subtitle:</strong>
-  <%= @blog.subtitle %>
-</p>
+  <p>
+    <strong>Subtitle:</strong>
+    <%= @blog.subtitle %>
+  </p>
 
-<h2>pics and words:</h2>
+  <h2>pics and words:</h2>
 
-<% @blog.blog_contents.each do |t| %>
-<%= image_tag t.main_image %>
-<p><%= t.body %></p>
+  <% @blog.blog_contents.each do |t| %>
+  <%= image_tag t.main_image %>
+  <p><%= t.body %></p>
 
-<% end %>
+  <% end %>
 
-<%= link_to 'Edit', blog_edit_path(@blog) %> |
-<%= link_to 'Back', blogs_path %>
+  <%= link_to 'Edit', blog_edit_path(@blog) %> |
+  <%= link_to 'Back', blogs_path %>
+</div>
