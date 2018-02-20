@@ -1,0 +1,12 @@
+<div class="form-group nested-fields">
+
+  <%= f.label :main_image %>
+  <%= f.text_field :main_image, class: 'form-control' %>
+
+  <%= f.label :thumb_image %>
+  <%= f.text_field :thumb_image, class: 'form-control' %>
+
+  <%= f.label :body %>
+  <%= f.text_field :body, class: 'form-control' %>
+  <%= link_to_remove_association 'Remove Blog Field', f %>
+</div>

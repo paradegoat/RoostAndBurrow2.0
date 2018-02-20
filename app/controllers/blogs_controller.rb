@@ -21,7 +21,6 @@ class BlogsController < ApplicationController
   # GET /blogs/new
   def new
     @blog = Blog.new
-    3.times { @blog.blog_contents.build }
   end
 
   # GET /blogs/1/edit
@@ -86,6 +85,11 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :subtitle, :topic_id, :status, blog_contents_attributes: [:main_image, :thumb_image, :body])
+      params.require(:blog).permit(:title,
+                                  :subtitle,
+                                  :topic_id,
+                                  :status,
+                                  blog_contents_attributes: [:id, :main_image, :thumb_image, :body, :_destroy]
+                                )
     end
 end
