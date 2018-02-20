@@ -1,5 +1,5 @@
 
-
+<div class="blog-post">
     <h1>title: <%= link_to blog.title, blog_show_path(blog) %></h1>
     <td>Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</td>
     <p>subtitle: <%= blog.subtitle %></p>
@@ -11,5 +11,5 @@
       <p>picture caption: <%= t.body %></p>
     <% end %>
 
-    <%= link_to 'Edit', blog_edit_path(blog) %>
-    <%= link_to 'Destroy', blog, method: :delete, data: { confirm: 'Are you sure?' } %>
+    <%= render partial: 'blogs/admin_actions', locals: { blog: blog } %>
+</div>

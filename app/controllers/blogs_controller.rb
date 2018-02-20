@@ -1,11 +1,12 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
   layout "blog"
+   access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
   # GET /blogs
   # GET /blogs.json
   def index
-    @blogs = Blog.all
+    @blogs = Blog.page(params[:page]).per(5)
     @page_title = "Roost and Burrow Blog"
   end
 
@@ -20,7 +21,6 @@ class BlogsController < ApplicationController
   # GET /blogs/new
   def new
     @blog = Blog.new
-    3.times { @blog.blog_contents.build }
   end
 
   # GET /blogs/1/edit
@@ -60,6 +60,7 @@ class BlogsController < ApplicationController
   # DELETE /blogs/1
   # DELETE /blogs/1.json
   def destroy
+    @blog = Blog.friendly.find(params[:id])
     @blog.destroy
     respond_to do |format|
       format.html { redirect_to blogs_url, notice: 'Blog was successfully destroyed.' }
@@ -85,6 +86,11 @@ class BlogsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def blog_params
-      params.require(:blog).permit(:title, :subtitle, :topic_id, :status, blog_contents_attributes: [:main_image, :thumb_image, :body])
+      params.require(:blog).permit(:title,
+                                  :subtitle,
+                                  :topic_id,
+                                  :status,
+                                  blog_contents_attributes: [:id, :main_image, :thumb_image, :body, :_destroy]
+                                )
     end
 end

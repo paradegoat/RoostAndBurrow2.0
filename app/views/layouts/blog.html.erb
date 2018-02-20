@@ -10,17 +10,19 @@
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
 
-    <%= render "shared/nav" %>
+    <%= render "shared/blog_nav", location: 'top' %>
+    <%= render 'shared/blog_masthead' %>
 
-    <%= login_helper %>
+    <div class="container">
 
+      <div class="row">
+        <%= yield %>
+        <%= render 'shared/blog_sidebar' %>
+      </div>
 
-    <%= yield %>
+      <%= source_helper("blog") %>
+    </div>
 
-    <%= source_helper("blog") %>
-    
   </body>
 </html>
