@@ -1,6 +1,6 @@
 class Blog < ApplicationRecord
   validates_presence_of :title, :subtitle
-
+  has_many :comments, dependent: :destroy
   has_many :blog_contents, dependent: :destroy
   belongs_to :topic
   accepts_nested_attributes_for :blog_contents,

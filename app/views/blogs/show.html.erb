@@ -1,23 +1,22 @@
+<div class="col-sm-8 blog-main">
 
-<div class="container portfolio-container">
-  <p>
-    <strong>Title:</strong>
-    <%= @blog.title %>
-  </p>
+  <h2><%= @blog.title %></h2>
+  <p><%= @blog.subtitle %></p>
 
-  <p>
-    <strong>Subtitle:</strong>
-    <%= @blog.subtitle %>
-  </p>
+  <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
 
   <h2>pics and words:</h2>
 
   <% @blog.blog_contents.each do |t| %>
   <%= image_tag t.main_image %>
   <p><%= t.body %></p>
-
   <% end %>
 
-  <%= link_to 'Edit', blog_edit_path(@blog) %> |
+  <%= render 'comments/comment_form' %>
+
+  <div id="comments" data-blog-id="<%= @blog.id %>">
+    <%= render @blog.comments %>
+  </div>
+
   <%= link_to 'Back', blogs_path %>
 </div>
