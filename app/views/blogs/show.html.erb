@@ -1,14 +1,13 @@
 
 <div class="container portfolio-container">
-  <p>
-    <strong>Title:</strong>
+  <h2>
     <%= @blog.title %>
-  </p>
-
+  </h2>
   <p>
     <strong>Subtitle:</strong>
     <%= @blog.subtitle %>
   </p>
+  <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
 
   <h2>pics and words:</h2>
 
@@ -17,7 +16,18 @@
   <p><%= t.body %></p>
 
   <% end %>
+  <% unless current_user.is_a? GuestUser %>
+    <%= form_for @comment, url: '#' do |f| %>
+      <div class="form-group">
+        <%= f.text_area :content, class: 'form-control', placeholder: "i got something to say..." %>
+      </div>
 
-  <%= link_to 'Edit', blog_edit_path(@blog) %> |
+      <%= f.submit 'Post Comment', class: 'btn btn-primary' %>
+    <% end %>
+  <% end %>
+
+  <%= render @blog.comments %>
+
+  |
   <%= link_to 'Back', blogs_path %>
 </div>
