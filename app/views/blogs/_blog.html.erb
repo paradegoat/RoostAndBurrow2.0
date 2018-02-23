@@ -3,11 +3,12 @@
    <h2 class="blog-post-title"><%= link_to blog.title, blog %></h2>
     <h5 class="blockquote-footer">subtitle: <%= blog.subtitle %></h5>
     <td>Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</td>
-    <h2>pics and words:</h2>
 
     <% blog.blog_contents.each do |t| %>
-      <%= image_tag t.main_image %>
-      <p>picture caption: <%= t.body %></p>
+      <%= image_tag t.main_image, class: "blog-image" %>
+      <blockquote class="blockquote">
+        <%= t.body %>
+      </blockquote>
     <% end %>
 
     <%= render partial: 'blogs/admin_actions', locals: { blog: blog } %>
