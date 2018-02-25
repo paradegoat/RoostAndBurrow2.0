@@ -30,6 +30,15 @@
    %>
  </div>
 
+ <div class="form-group">
+    <%= form.radio_button :status, 'draft' %>
+    <%= form.label :status, 'Draft' %>
+
+    <%= form.radio_button :status, 'published' %>
+    <%= form.label :status, 'Published' %>
+  </div>
+
+
   <div>
     <%= form.fields_for :blog_contents do |blog_content_form| %>
       <%= render 'blog_content_fields', form: blog_content_form %>

@@ -1,7 +1,13 @@
-<div class="blog-header">
+<section class="jumbotron">
   <div class="container">
-    <h1 class="blog-title">My Blog</h1>
-    <p class="lead blog-description">An example blog template built with Bootstrap.</p>
-    <%= link_to 'Write a New Blog', new_blog_path if logged_in?(:site_admin) %>
+    <h1 class="jumbotron-heading title text-center">Roost and Burrow</h1>
+  </div>
+</section>
+<div class="bg-light container ">
+  <h4 class= "text-center">Topics</h4>
+  <div class="navbar topic-bar">
+    <% @side_bar_topics.each do |topic| %>
+    <p class='topics'><%= link_to topic.title, topic_path(topic) %></p>
+    <% end %>
   </div>
 </div>

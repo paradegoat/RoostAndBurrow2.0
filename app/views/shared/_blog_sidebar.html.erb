@@ -1,16 +1,32 @@
-<div class="col-sm-3 offset-sm-1 blog-sidebar">
+<div class="col-sm-4 offset-sm-1  blog-sidebar">
   <div class="sidebar-module sidebar-module-inset">
     <h4>About</h4>
     <p>Etiam porta <em>sem malesuada magna</em> mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.</p>
   </div>
 
-  <div class="sidebar-module">
-    <h4>Elsewhere</h4>
-    <ol class="list-unstyled social-links">
-      <li><a href="#"><%= fa_icon "github" %></a></li>
-      <li><a href="#"><%= fa_icon "instagram" %></a></li>
-      <li><a href="#"><%= fa_icon "facebook" %></a></li>
-      <li><a href="#"><%= fa_icon "twitter" %></a></li>
-    </ol>
+  <%= source_helper("alert alert-warning") %>
+
+  <div class="sidebar-module sidebar-module-inset">
+    <h4>Topics</h4>
+    <% @side_bar_topics.each do |topic| %>
+      <button class="btn topic-links text-center"><%= link_to topic.title, topic_path(topic) %></button>
+    <% end %>
+  </div>
+
+  <div class="sidebar-module sidebar-module-inset">
+    <h4 class="text-center">Social Media</h4>
+    <div class="d-flex justify-content-around social-links">
+      <!-- <div class="p-2"><a href="#"><%= fa_icon "github" %></a></div> -->
+      <div class="p-2"><a href="#"><%= fa_icon "instagram" %></a></div>
+      <div class="p-2"><a href="#"><%= fa_icon "facebook" %></a></div>
+      <div class="p-2"><a href="#"><%= fa_icon "twitter" %></a></div>
+    </div>
+  </div>
+
+  <div class="sidebar-module sidebar-module-inset instagram">
+    <h3 class="sidebar-title text-center"><%= link_to "-instagram-","https://www.instagram.com/roostandburrow/", target: "_blank", rel: "nofollow" %> </h3>
+    <div class="container">
+      <div id="instafeed" class="row d-flex justify-content-center"></div>
+    </div>
   </div>
 </div>
