@@ -25,11 +25,11 @@ $(document).ready(function() {
     var userFeed = new Instafeed({
         get: 'user',
         userId: '13341574',
-        limit: 9,
+        limit: 6,
         resolution: 'thumbnail',
         accessToken: '13341574.1677ed0.6ab6d995e85e47aea3903cf813219cef',
         sortBy: 'most-recent',
-        template: '<div class="col-xs-4 gallery"><a href="{{image}}" title="{{caption}}" target="_blank"><img src="{{image}}" alt="{{caption}}" class="img-fluid ass"/></a></div>',
+        template: '<div class=" card gallery"><a href="{{image}}" title="{{caption}}" target="_blank"><img src="{{image}}" alt="{{caption}}" class="img-fluid"/></a></div>',
     });
     userFeed.run();
 

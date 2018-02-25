@@ -13,27 +13,20 @@
     <% end %>
   </div>
 
-  <div class=" container sidebar-module sidebar-module-inset">
+  <div class="sidebar-module sidebar-module-inset">
     <h4 class="text-center">Social Media</h4>
     <div class="d-flex justify-content-around social-links">
-      <div class="p-2"><a href="#"><%= fa_icon "github" %></a></div>
+      <!-- <div class="p-2"><a href="#"><%= fa_icon "github" %></a></div> -->
       <div class="p-2"><a href="#"><%= fa_icon "instagram" %></a></div>
+      <div class="p-2"><a href="#"><%= fa_icon "facebook" %></a></div>
+      <div class="p-2"><a href="#"><%= fa_icon "twitter" %></a></div>
     </div>
-      <div class="d-flex justify-content-around social-links">
-        <div class="p-2"><a href="#"><%= fa_icon "facebook" %></a></div>
-        <div class="p-2"><a href="#"><%= fa_icon "twitter" %></a></div>
-      </div>
   </div>
 
-  <div class="container sidebar-module sidebar-module-inset instagram">
-    <h3 class="sidebar-title"><%= link_to "-instagram-","https://www.instagram.com/roostandburrow/", target: "_blank", rel: "nofollow" %> </h3>
-    <div class="instablock">
-      <div class="container-fluid">
-          <div class="card">
-            <div id="instafeed" class="row">
-            </div>
-          </div>
-      </div>
+  <div class="sidebar-module sidebar-module-inset instagram">
+    <h3 class="sidebar-title text-center"><%= link_to "-instagram-","https://www.instagram.com/roostandburrow/", target: "_blank", rel: "nofollow" %> </h3>
+    <div class="container">
+      <div id="instafeed" class="row d-flex justify-content-center"></div>
     </div>
-
+  </div>
 </div>
