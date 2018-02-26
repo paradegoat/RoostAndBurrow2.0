@@ -1,15 +1,19 @@
 
 <div class="blog-post">
    <h2 class="blog-post-title"><%= link_to blog.title, blog %></h2>
-    <h5 class="blockquote-footer">subtitle: <%= blog.subtitle %></h5>
+    <h5 class="blockquote-footer"><%= blog.subtitle %></h5>
     <td>Published <%= distance_of_time_in_words(blog.created_at, Time.now) %> ago</td>
+    <%= image_tag blog.cover_image, class: "blog-image" %>
 
-    <% blog.blog_contents.each do |t| %>
+ <!-- Bootstrap carousel to be added here later  -->
+ 
+    <!-- <% blog.blog_contents.each do |t| %>
       <%= image_tag t.main_image, class: "blog-image" %>
       <blockquote class="blockquote">
         <%= t.body %>
       </blockquote>
-    <% end %>
+    <% end %> -->
+
 
     <%= render partial: 'blogs/admin_actions', locals: { blog: blog } %>
 </div>

@@ -2,8 +2,9 @@ class Blog < ApplicationRecord
   enum status: { draft: 0, published: 1 }
   extend FriendlyId
   friendly_id :title, use: :slugged
+  mount_uploader :cover_image, BlogUploader
 
-  validates_presence_of :title, :subtitle, :topic_id
+  validates_presence_of :title, :subtitle, :cover_image, :topic_id
   has_many :comments, dependent: :destroy
   has_many :blog_contents, dependent: :destroy
 

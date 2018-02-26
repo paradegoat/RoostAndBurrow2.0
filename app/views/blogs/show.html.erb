@@ -1,4 +1,4 @@
-<div class="col-sm-8 blog-main">
+<div class="col-sm-6 offset-sm-1 blog-main">
 
   <nav class="breadcrumb row">
     <div class='col'>
@@ -15,8 +15,6 @@
   </nav>
   <h2><%= @blog.title %></h2>
   <p><%= @blog.subtitle %></p>
-
-  <%= link_to 'Edit', edit_blog_path(@blog) if logged_in?(:site_admin) %>
 
   <% @blog.blog_contents.each do |t| %>
   <%= image_tag t.main_image, class: "blog-image" %>
