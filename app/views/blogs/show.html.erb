@@ -1,4 +1,4 @@
-<div class="col-sm-6 offset-sm-1 blog-main">
+<div class="col-sm-7 offset-sm-1 blog-main">
 
   <nav class="breadcrumb row">
     <div class='col'>
@@ -13,8 +13,8 @@
       </span>
     </div>
   </nav>
-  <h2><%= @blog.title %></h2>
-  <p><%= @blog.subtitle %></p>
+  <h2 class="blog-post-title"><%= @blog.title %></h2>
+  <lead><%= @blog.subtitle %></lead>
 
   <% @blog.blog_contents.each do |t| %>
   <%= image_tag t.main_image, class: "blog-image" %>
@@ -29,5 +29,5 @@
     <%= render @blog.comments %>
   </div>
 
-  <%= link_to 'Back', blogs_path %>
+    <button class="btn topic-links text-center"><%= link_to 'Back To Blogs', blogs_path %></button>
 </div>
