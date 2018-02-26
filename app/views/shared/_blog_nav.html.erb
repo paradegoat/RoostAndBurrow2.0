@@ -1,13 +1,12 @@
-<nav class="navbar navbar-expand-md navbar-light bg-light blog-nav sticky-top">
-    <%= link_to "Rust and Borrow", root_path, class: 'navbar-brand' %>
+<nav class=" navbar-expand-md navbar-light blog-nav sticky-top">
   <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="container">
+  <div class="container-fluid">
 
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
+      <ul class="navbar-nav nav-fill center-nav">
         <%= nav_helper 'nav-link', 'li' %>
         <%= login_helper 'nav-link' %>
       </ul>
