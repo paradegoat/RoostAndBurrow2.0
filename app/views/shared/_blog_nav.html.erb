@@ -1,15 +1,21 @@
-<nav class=" navbar-expand-md navbar-light blog-nav sticky-top">
-  <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-light navbar-expand-md sticky-top">
 
-  <div class="container-fluid">
-
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav nav-fill center-nav">
-        <%= nav_helper 'nav-link', 'li' %>
-        <%= login_helper 'nav-link' %>
-      </ul>
+    <div class="navbar-brand">
+      <a class="nav-brand-media" href="#"><%= fa_icon "instagram" %></a>
+      <a class="nav-brand-media" href="#"><%= fa_icon "facebook" %></a>
+      <a class="nav-brand-media" href="#"><%= fa_icon "twitter" %></a>
     </div>
-  </div>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="navbar-collapse collapse justify-content-between" id="collapsingNavbar2">
+        <ul class="navbar-nav mx-auto text-center text-uppercase">
+          <%= nav_helper 'nav-link', 'li' %>
+        </ul>
+        <ul class="nav navbar-nav flex-row text-uppercase">
+          <%= login_helper 'nav-link' %>
+        </ul>
+    </div>
+
 </nav>
