@@ -8,7 +8,7 @@
 
   <%= source_helper("alert alert-warning") %>
   <div class="sidebar-module sidebar-module-inset">
-    <h4 class="text-center sidebar-module-header">Social Media</h4>
+    <h5 class="text-center sidebar-module-header text-uppercase">Social Media</h5>
     <div class="d-flex justify-content-around social-links">
       <!-- <div class="p-2"><a href="#"><%= fa_icon "github" %></a></div> -->
       <div class=""><a href="#"><%= fa_icon "instagram" %></a></div>
@@ -18,16 +18,59 @@
   </div>
 
   <div class="sidebar-module sidebar-module-inset">
-    <h4 class="text-center sidebar-module-header">Topics</h4>
-    <% @side_bar_topics.each do |topic| %>
+    <h5 class="text-center sidebar-module-header text-uppercase">Topics</h5>
+
+    <div class="container">
+      <div class="row text-center">
+        <a  class="col topic-link" href="/topics/1">
+          <%= image_tag "caravan.png", width: 50, alt: "airstream image", :class => "butter" %>
+          <p class="sibebar-topic-link-text">
+            airstream
+          </p>
+        </a>
+        <a class="col topic-link" href="/topics/3">
+          <%= image_tag "cooking.png", width: 50, alt: "airstream image" %>
+          <p class="sibebar-topic-link-text">
+            food
+          </p>
+        </a>
+        <a class="col topic-link" href="/topics/3">
+          <%= image_tag "paint-roller.png", width: 50, alt: "airstream image" %>
+          <p class="sibebar-topic-link-text">
+            house projects
+          </p>
+        </a>
+      </div>
+      <div class="row text-center">
+        <a  class="col topic-link" href="/topics/1">
+          <%= image_tag "chicken-logo.png", width: 50, alt: "airstream image", :class => "butter" %>
+          <p class="sibebar-topic-link-text">
+            other topic
+          </p>
+        </a>
+        <a class="col topic-link" href="/topics/3">
+          <%= image_tag "chicken-logo.png", width: 50, alt: "airstream image" %>
+          <p class="sibebar-topic-link-text">
+            other topic
+          </p>
+        </a>
+        <a class="col topic-link" href="/topics/3">
+          <%= image_tag "chicken-logo.png", width: 50, alt: "airstream image" %>
+          <p class="sibebar-topic-link-text">
+            other topic
+          </p>
+        </a>
+      </div>
+    </div>
+
+
+    <!-- <% @side_bar_topics.each do |topic| %>
       <button class="btn topic-links text-center"><%= link_to topic.title, topic_path(topic) %></button>
     <% end %>
-  </div>
-
-  <div class="sidebar-module sidebar-module-inset instagram">
-    <h3 class="sidebar-module-header text-center"><%= link_to "instagram","https://www.instagram.com/roostandburrow/", target: "_blank", rel: "nofollow" %> </h3>
+  </div> -->
+  <div class="sidebar-module sidebar-module-inset">
+    <h5 class="text-center sidebar-module-header text-uppercase">Instagram</h5>
     <div class="container">
-      <div id="instafeed" class="row d-flex justify-content-center"></div>
+      <div id="instafeed" class="row"></div>
     </div>
   </div>
-</div>
