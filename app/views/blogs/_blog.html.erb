@@ -1,31 +1,22 @@
 
-<div class="blog-post">
-  <div class="text-center">
-  <td class="">Published <%= blog.created_at.strftime("%b %d, %Y") %> </td>
-   <h2 class="blog-post-title"><%= link_to blog.title, blog %></h2>
-    <h5 class="blockquote-footer"><%= blog.subtitle %></h5>
-  </div>
-      <a href='<%= blog_show_path(blog) %>'>
-    <%= image_tag blog.cover_image, class: "blog-image" %>
- </a>
-
- <!-- Bootstrap carousel to be added here later  -->
-
-    <!-- <% blog.blog_contents.each do |t| %>
-      <%= image_tag t.main_image, class: "blog-image" %>
-      <blockquote class="blockquote">
-        <%= t.body %>
-      </blockquote>
-    <% end %> -->
-
-
-    <%= render partial: 'blogs/admin_actions', locals: { blog: blog } %>
+<div class="blog-index">
+  <div class="text-center blockquote-header">
+    <h8 class="blog-date"><%= blog.created_at.strftime("%B %d, %Y") %> </h8>
     <hr />
-    <button class="btn topic-links text-center"><%= link_to 'View Post', blog %></button>
-    <div class="float-right">
-       <p>
-         more on this topic
-       </p>
+    <h3 class="blog-index-title"><%= link_to blog.title, blog %></h3>
+    <h5 class="blockquote"><%= blog.subtitle %></h5>
+  </div>
+  <a href='<%= blog_show_path(blog) %>'>
+    <%= image_tag blog.cover_image, class: "blog-image" %>
+  </a>
+
+  <%= render partial: 'blogs/admin_actions', locals: { blog: blog } %>
+  <hr />
+  <button class="btn topic-links text-center"><%= link_to 'View Post', blog %></button>
+  <div class="float-right">
+    <p>
+      more on this topic
+    </p>
     <button class="btn topic-links text-center float-right"><%= link_to blog.topic.title, topic_path(blog.topic) %></button>
   </div>
 </div>
