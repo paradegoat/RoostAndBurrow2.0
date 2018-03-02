@@ -1,1 +1,36 @@
 @import "bootstrap";
+@import "font-awesome";
+
+
+
+a{
+  color: grey;
+  text-decoration: none;
+}
+
+a:hover{
+  color: #f7b6aa;
+  text-decoration: none;
+}
+
+
+//
+// Navigation bar
+//
+
+.navbar {
+  background-color: #efdedb;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.nav-brand-media{
+  padding-left: .5vw;
+}
+
+.nav-link {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 100;
+}
