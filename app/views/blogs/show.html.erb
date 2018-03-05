@@ -1,4 +1,4 @@
-<div class="col-sm-8 blog-main">
+<div class="col-sm-8 blog-main blog-index">
 
   <nav class="breadcrumb row">
     <div class='col'>
@@ -30,9 +30,9 @@
 <hr />
   <% @blog.blog_contents.each do |t| %>
   <%= image_tag t.main_image, class: "blog-image" %>
-  <blockquote class="blockquote">
+  <h3 class="blockquote blog-show-body">
     <%= t.body %>
-  </blockquote>
+  </h3>
   <% end %>
 
   <%= render 'comments/comment_form' %>

@@ -126,6 +126,7 @@ a:hover{
 
 .blog-index {
   margin-bottom: 4rem;
+  padding-left: 4rem;
 }
 
 .blog-date{
@@ -160,6 +161,13 @@ a:hover{
 
 }
 
+.blog-show-body {
+  padding: 2vw;
+  font-size: 1.5vw;
+  // background-color: #f2f9f8;
+  margin-bottom: 0 !important;
+}
+
 //
 // Comment Section
 //
@@ -169,7 +177,7 @@ a:hover{
 }
 
 .comment-attribution {
-  font-size: .8em;
+  font-size: 12px;
   font-style: italic;
 }
 
