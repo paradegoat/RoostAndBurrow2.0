@@ -20,46 +20,54 @@
   <div class="sidebar-module sidebar-module-inset">
     <h5 class="text-center sidebar-module-header text-uppercase">Topics</h5>
 
+
+
+
+
+
+
+
     <div class="container">
       <div class="row text-center">
-        <a  class="col topic-link" href="/topics/1">
-          <%= image_tag "caravan.png", width: 50, alt: "airstream image", :class => "butter" %>
-          <p class="sibebar-topic-link-text">
+        <div class="col side-bar-topic-link view overlay">
+          <%= link_to image_tag("caravan.png", width: 50, alt: "airstream image link"), topic_path(1) %>
+          <p class="sibebar-topic-link-text mask flex-center rgba-green-slight">
             airstream
           </p>
-        </a>
-        <a class="col side-bar-topic-link" href="/topics/3">
-          <%= image_tag "cooking.png", width: 50, alt: "airstream image" %>
+        </div>
+        <div class="col side-bar-topic-link">
+          <%= link_to image_tag("cooking.png", width: 50, alt: "food image link"), topic_path(4) %>
           <p class="sibebar-topic-link-text">
             food
           </p>
-        </a>
-        <a class="col side-bar-topic-link" href="/topics/3">
-          <%= image_tag "paint-roller.png", width: 50, alt: "airstream image" %>
+        </div>
+        <div class="col side-bar-topic-link">
+          <%= link_to image_tag("paint-roller.png", width: 50, alt: "house projects image link"), topic_path(2) %>
           <p class="sibebar-topic-link-text">
             house projects
           </p>
-        </a>
+        </div>
       </div>
       <div class="row text-center">
-        <a  class="col side-bar-topic-link" href="/topics/1">
-          <%= image_tag "chicken-logo.png", width: 50, alt: "airstream image", :class => "butter" %>
-          <p class="sibebar-topic-link-text">
-            other topic
+        <div class="col side-bar-topic-link view overlay">
+          <%= link_to image_tag("caravan.png", width: 50, alt: "airstream image link"), topic_path(1) %>
+          <p class="sibebar-topic-link-text mask flex-center rgba-green-slight">
+            placeholder
           </p>
-        </a>
-        <a class="col side-bar-topic-link" href="/topics/3">
-          <%= image_tag "chicken-logo.png", width: 50, alt: "airstream image" %>
-          <p class="sibebar-topic-link-text">
-            other topic
+        </div>
+        <div class="col side-bar-topic-link view overlay">
+          <%= link_to image_tag("caravan.png", width: 50, alt: "airstream image link"), topic_path(1) %>
+          <p class="sibebar-topic-link-text mask flex-center rgba-green-slight">
+            placeholder
           </p>
-        </a>
-        <a class="col side-bar-topic-link" href="/topics/3">
-          <%= image_tag "chicken-logo.png", width: 50, alt: "airstream image" %>
-          <p class="sibebar-topic-link-text">
-            other topic
+        </div>
+        <div class="col side-bar-topic-link view overlay">
+          <%= link_to image_tag("caravan.png", width: 50, alt: "airstream image link"), topic_path(1) %>
+          <p class="sibebar-topic-link-text mask flex-center rgba-green-slight">
+            placeholder
           </p>
-        </a>
+        </div>
+
       </div>
     </div>
 
