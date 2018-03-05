@@ -19,5 +19,5 @@ end
 
   mount ActionCable.server => '/cable'
 
-  root to: 'pages#home'
+  root to: 'blogs#index'
 end
