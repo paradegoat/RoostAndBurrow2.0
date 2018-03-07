@@ -143,9 +143,73 @@ a:hover{
   color: #efdedb;
 }
 
-.blog-image{
+.blog-index-topic-icon {
+  // border: 2px solid blue;
+}
+.butt-butt {
+  // border: 2px solid green;
+}
+
+.butt-butt img{
+  margin: 1vw;
+  // border: 2px solid yellow;
+}
+.blog-image {
   width: 100%;
 }
+
+.blog-show-link {
+  border: 1px solid grey;
+  margin: 1vw;
+  padding: .5vw;
+}
+
+.blog-topic-link-text {
+  padding-top: 1vw;
+  font-family: 'Rubik', sans-serif;
+  text-transform: uppercase;
+  font-size: 75%;
+  margin-bottom: 0;
+}
+
+
+.hovereffect {
+width:100%;
+height:100%;
+overflow:hidden;
+position:relative;
+cursor:default;
+}
+
+.hovereffect .overlay {
+width:100%;
+height:100%;
+position:absolute;
+overflow:hidden;
+top:0;
+left:0;
+opacity:0;
+background-color:rgba(0,0,0,0.5);
+-webkit-transition:all .4s ease-in-out;
+transition:all .4s ease-in-out
+}
+
+.hovereffect img {
+position:relative;
+-webkit-transition:all .4s linear;
+transition:all .4s linear;
+}
+
+.hovereffect:hover img {
+-ms-transform:scale(1.2);
+-webkit-transform:scale(1.2);
+transform:scale(1.2);
+}
+
+.hovereffect:hover a{
+  color: #f7b6aa;
+}
+
 
 .blog-show-cover-image img {
   border-radius: 10vw;
@@ -155,6 +219,7 @@ a:hover{
   margin-bottom: .25rem;
   font-family: 'Rubik', sans-serif;
   text-transform: uppercase;
+  color: #f7b6aa; 
 }
 
 .blog-show-subtitle{
@@ -166,6 +231,11 @@ a:hover{
   font-size: 1.5vw;
   // background-color: #f2f9f8;
   margin-bottom: 0 !important;
+}
+
+.blog-topic-title {
+  font-family: 'Rubik', sans-serif;
+  text-transform: uppercase;
 }
 
 //
@@ -225,7 +295,7 @@ a:hover{
   background-color: #efdedb;
 }
 
-.sibebar-topic-link-text {
+.sidebar-topic-link-text {
   padding-top: 1vw;
   font-family: 'Rubik', sans-serif;
   text-transform: uppercase;
