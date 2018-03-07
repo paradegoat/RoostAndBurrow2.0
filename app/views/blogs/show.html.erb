@@ -14,20 +14,22 @@
     </div>
   </nav>
 
-
   <div class="container">
+
     <div class="row">
       <div class="col-6 blog-show-cover-image">
         <%= image_tag @blog.cover_image, class: "blog-image" %>
       </div>
       <div class="card col-4 offset-1">
+        <h8 class="blog-date"><%= @blog.created_at.strftime("%B %d, %Y") %> </h8>
         <h2 class="blog-show-title text-center"><%= @blog.title %></h2>
         <lead class="blog-show-subtitle"><%= @blog.subtitle %></lead>
       </div>
-
     </div>
   </div>
+
 <hr />
+
   <% @blog.blog_contents.each do |t| %>
   <%= image_tag t.main_image, class: "blog-image" %>
   <h3 class="blockquote blog-show-body">
