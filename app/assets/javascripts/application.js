@@ -15,6 +15,7 @@
 //= require rails-ujs
 //= require cocoon
 //= require cable
+//= require popper
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
