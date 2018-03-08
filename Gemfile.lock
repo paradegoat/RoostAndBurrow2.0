@@ -249,6 +249,7 @@ DEPENDENCIES
   mini_magick (~> 4.8)
   petergate (~> 1.8, >= 1.8.1)
   pg (~> 0.18)
+  popper_js (~> 1.12, >= 1.12.9)
   puma (~> 3.7)
   rails (~> 5.1.4)
   redis (~> 4.0, >= 4.0.1)

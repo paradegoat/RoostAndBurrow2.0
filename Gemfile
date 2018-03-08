@@ -43,5 +43,6 @@ gem 'carrierwave', '~> 1.2', '>= 1.2.2'
 gem 'mini_magick', '~> 4.8'
 gem 'redis', '~> 4.0', '>= 4.0.1'
 gem 'instafeed'
+gem 'popper_js', '~> 1.12', '>= 1.12.9'
 
 ruby "2.4.0"
