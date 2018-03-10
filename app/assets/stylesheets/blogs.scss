@@ -102,8 +102,15 @@ a:hover{
   color: #f7b6aa !important;
 }
 
-.view-blog-button:hover a {
-  color: #f7b6aa;
+
+.view-blog-button{
+  border: 1px solid grey !important;
+  font-family: 'Rubik', sans-serif;
+  text-transform: uppercase;
+}
+
+.view-blog-button:hover  {
+  color: #f7b6aa !important;
 }
 //
 // Jumbotron
@@ -242,7 +249,7 @@ transform:scale(1.2);
 
 
 .blog-show-cover-image img {
-  border-radius: 10vw;
+  border-radius: 2vw;
 }
 
 .blog-show-title {
@@ -276,6 +283,8 @@ transform:scale(1.2);
 
 .comment-card > .card {
   margin-top: 15px;
+  margin-bottom: 15px;
+  width: 60%;
 }
 
 .comment-attribution {
@@ -339,7 +348,7 @@ transform:scale(1.2);
 }
 
 .instagram-card {
-  padding: .5px;
+  padding: 1px;
 }
 
 /* Pagination */
@@ -387,6 +396,7 @@ transform:scale(1.2);
 
 .alpha {
   border: 1px solid red;
+  background: image-url('wellness-hover.png');
 }
 .beta {
   border: 1px solid green;
@@ -405,4 +415,12 @@ font-size: 75%;
 
 .entry-header {
     margin: 0 0 15px;
+}
+
+.wellness img{
+}
+
+.wellness img:hover {
+  background: image-url('wellness-hover.png');
+  border: 3px solid blue;
 }
