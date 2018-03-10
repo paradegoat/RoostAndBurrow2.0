@@ -12,7 +12,6 @@
     </div>
   </nav>
 
-
   <div class="row">
     <div class="col">
       <header class="entry-header">
@@ -40,11 +39,14 @@
   </h3>
   <% end %>
 
-  <%= render 'comments/comment_form' %>
-
   <div id="comments" data-blog-id="<%= @blog.id %>">
     <%= render @blog.comments %>
   </div>
 
-  <button class="btn btn-light view-blog-button"><%= link_to 'Back To Blogs', blogs_path %></button>
+  <%= render 'comments/comment_form' %>
+
+  <div class="text-right">
+    <a href="<%= blogs_path %>" class="col-md-3 btn btn-outline-light view-blog-button active" role="button" aria-pressed="true">back to the blog
+    </a>
+  </div>
 </div>

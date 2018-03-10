@@ -21,7 +21,7 @@
 
   <div class="blog-index-footer">
     <div class="row align-items-start justify-content-between">
-      <button class='col-md-3 btn btn-light view-blog-button'><%= link_to 'View Post', blog %></button>
+      <a href="<%= blog_show_path(blog) %>" class="col-md-3 btn btn-outline-light view-blog-button active" role="button" aria-pressed="true">View Post</a>
       <div class="col-md-3 text-right blog-topic-link">
         <p class="blog-topic-link-text">
           more on this topic?
