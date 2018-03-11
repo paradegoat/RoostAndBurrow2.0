@@ -6,7 +6,7 @@ module DefaultPageContent
   end
 
   def set_page_defaults
-    @page_title = "Rust and Borrow"
+    @page_title = "Roost and Burrow"
     @seo_keywords = ""
   end
 end
