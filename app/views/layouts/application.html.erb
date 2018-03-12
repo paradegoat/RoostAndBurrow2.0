@@ -19,13 +19,16 @@
   </head>
 
   <body>
+    <div class="site-wrapper">
+      <div class="site-wrapper-inner">
+        <div class="cover-container">
+          <%= render "shared/blog_nav" %>
+                    
+          <%= yield %>
 
-    <%= render "shared/blog_nav" %>
-
-
-    <%= yield %>
-
-    <%= source_helper("application") %>
-
+          <%= source_helper("application") %>
+        </div>
+      </div>
+    </div>
   </body>
 </html>

@@ -1,12 +1,14 @@
 class TopicsController < ApplicationController
-  before_action :set_sidebar_topics
+  before_action :set_topics
   layout 'blog'
   def index
       @topics = Topic.all
+      @subscriber = Subscriber.new
   end
 
   def show
     @topic = Topic.find(params[:id])
+    @subscriber = Subscriber.new
 
    if logged_in?(:site_admin)
      @blogs = @topic.blogs.recent.page(params[:page]).per(5)
@@ -17,7 +19,7 @@ class TopicsController < ApplicationController
 
   private
 
-  def set_sidebar_topics
-    @side_bar_topics = Topic.with_blogs
+  def set_topics
+    @nav_topics = Topic.with_blogs
   end
 end

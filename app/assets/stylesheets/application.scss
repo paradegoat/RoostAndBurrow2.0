@@ -3,6 +3,41 @@
 
 
 
+
+/*
+ * Globals
+ */
+
+@media (min-width: 48em) {
+  html {
+    font-size: 18px;
+  }
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  color: #555;
+}
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: 'Raleway', sans-serif;
+  font-weight: normal;
+  color: #333;
+}
+
+
+button {
+  border: 1px solid grey !important;
+  font-family: 'Rubik', sans-serif;
+  text-transform: uppercase;
+}
+
+
 a{
   color: grey;
   text-decoration: none;
@@ -13,6 +48,17 @@ a:hover{
   text-decoration: none;
 }
 
+/*
+ * Override Bootstrap's default container.
+ */
+
+.container {
+  max-width: 60rem;
+}
+
+//  /////////////////////////////////////////////////
+//  Custom styles
+// /////////////////////////////////////////////////
 
 //
 // Navigation bar
@@ -33,6 +79,37 @@ a:hover{
   padding-bottom: 0 !important;
   font-family: 'Rubik', sans-serif;
   font-weight: 100;
+}
+
+.nav-topic-text{
+  font-size: 75%;
+  padding-left: 1vw;
+  // border: 1px solid blue;
+}
+
+.nav-topic-icon {
+  padding-right: 1vw;
+  // border: 1px solid green;
+}
+
+.nav-topic-button a{
+  font-size: 75%;
+  letter-spacing: 3px !important;
+  // padding: 1vw;
+}
+
+.nav-topic-button:hover a{
+  color: #f7b6aa !important;
+}
+
+.view-blog-button{
+  border: 1px solid grey !important;
+  font-family: 'Rubik', sans-serif;
+  text-transform: uppercase;
+}
+
+.view-blog-button:hover  {
+  color: #f7b6aa !important;
 }
 
 .app-card-container-fluid {

@@ -3,9 +3,7 @@ module ApplicationHelper
    if current_user.is_a?(GuestUser)
      (link_to "Login", new_user_session_path, class: style)
    else
-     (link_to "Logout", destroy_user_session_path, method: :delete, class: style ) +
-     " ".html_safe +
-     (link_to 'Write a New Blog', new_blog_path, class: style)
+     (link_to "Logout", destroy_user_session_path, method: :delete, class: style)
    end
  end
 
@@ -25,10 +23,6 @@ module ApplicationHelper
       {
         url: about_me_path,
         title: 'About Me'
-      },
-      {
-        url: blogs_path,
-        title: 'Blog'
       },
       {
         url: contact_path,

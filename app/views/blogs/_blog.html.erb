@@ -1,8 +1,13 @@
 
 <div class="blog-index">
-  <div class="text-center blockquote-header">
-    <h8 class="blog-date"><%= blog.created_at.strftime("%B %d, %Y") %> </h8>
-    <hr />
+  <div class="text-center">
+    <header class="entry-header">
+    <div class="entry-meta text-center">
+      <span class="date-bar-white-bg">
+        <%= blog.created_at.strftime("%B %d, %Y") %>
+      </span>
+    </div>
+  </header>
     <h3 class="blog-index-title"><%= link_to blog.title, blog %></h3>
     <h5 class="blockquote"><%= blog.subtitle %></h5>
   </div>
@@ -14,10 +19,10 @@
 
   <hr />
 
-  <div class="blog-index-topic-icon">
-    <div class="row align-items-start justify-content-between">      
-      <button class='col-md-3 btn btn-light'><%= link_to 'View Post', blog %></button>
-      <div class="col-md-3 text-right butt-butt">
+  <div class="blog-index-footer">
+    <div class="row align-items-start justify-content-between">
+      <a href="<%= blog_show_path(blog) %>" class="col-md-3 btn btn-outline-light view-blog-button active" role="button" aria-pressed="true">View Post</a>
+      <div class="col-md-3 text-right blog-topic-link">
         <p class="blog-topic-link-text">
           more on this topic?
         </p>
@@ -29,6 +34,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>

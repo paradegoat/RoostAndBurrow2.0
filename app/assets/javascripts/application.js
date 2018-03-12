@@ -13,12 +13,13 @@
 //= require jquery
 //= require jquery_ujs
 //= require rails-ujs
-//= require instafeed
 //= require cocoon
 //= require cable
+//= require popper
 //= require turbolinks
 //= require_tree .
 //= require bootstrap-sprockets
+//= require instafeed
 
 
 $(document).ready(function() {

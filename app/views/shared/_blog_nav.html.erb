@@ -1,21 +1,38 @@
 <nav class="navbar navbar-light navbar-expand-md sticky-top">
-
-    <div class="navbar-brand">
-      <a class="nav-brand-media" href="#"><%= fa_icon "instagram" %></a>
-      <a class="nav-brand-media" href="#"><%= fa_icon "facebook" %></a>
-      <a class="nav-brand-media" href="#"><%= fa_icon "twitter" %></a>
-    </div>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <div class="navbar-collapse collapse justify-content-between" id="collapsingNavbar2">
-        <ul class="navbar-nav mx-auto text-center text-uppercase">
-          <%= nav_helper 'nav-link', 'li' %>
-        </ul>
-        <ul class="nav navbar-nav flex-row text-uppercase">
-          <%= login_helper 'nav-link' %>
-        </ul>
-    </div>
-
+  <div class="navbar-brand">
+    <a class="nav-brand-media" href="https://www.instagram.com/rachellarat/"><%= fa_icon "instagram" %></a>
+    <a class="nav-brand-media" href="#"><%= fa_icon "facebook" %></a>
+    <a class="nav-brand-media" href="#"><%= fa_icon "twitter" %></a>
+  </div>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsingNavbar2">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="navbar-collapse collapse justify-content-between" id="collapsingNavbar2">
+    <ul class="navbar-nav mx-auto text-center text-uppercase">
+      <%= nav_helper 'nav-link', 'li' %>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <% @nav_topics.each do |topic| %>
+          <div class="row justify-content-between">
+            <div class="col-md-12 nav-topic-button">
+              <a href="<%= topic_path(topic) %>" class="dropdown-item btn btn-link btn-outline-light active" role="button" aria-pressed="true">
+                <%=  "#{image_tag(topic.icon, width: 50, alt: "blog topic link", class: "nav-topic-icon")} #{topic.title}".html_safe %>
+              </a>
+            </div>
+          </div>
+          <div class="dropdown-divider"></div>
+          <% end %>
+        </div>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav flex-row text-uppercase">
+      <%= login_helper 'nav-link' %>
+      <span>
+        <%= link_to 'Write a New Blog', new_blog_path if logged_in?(:site_admin) %>
+      </span>
+    </ul>
+  </div>  
 </nav>

@@ -1,6 +1,6 @@
 class BlogsController < ApplicationController
   before_action :set_blog, only: [:show, :edit, :update, :destroy, :toggle_status]
-   before_action :set_sidebar_topics, except: [:update, :create, :destroy, :toggle_status]
+  before_action :set_topics, except: [:update, :create, :destroy, :toggle_status]
   layout "blog"
    access all: [:show, :index], user: {except: [:destroy, :new, :create, :update, :edit]}, site_admin: :all
 
@@ -13,6 +13,7 @@ class BlogsController < ApplicationController
       @blogs = Blog.published.recent.page(params[:page]).per(5)
     end
     @page_title = "Roost and Burrow Blog"
+    @subscriber = Subscriber.new
   end
 
   # GET /blogs/1
@@ -21,7 +22,7 @@ class BlogsController < ApplicationController
     if logged_in?(:site_admin) || @blog.published?
      @blog = Blog.includes(:comments).friendly.find(params[:id])
      @comment = Comment.new
-
+     @subscriber = Subscriber.new
      @page_title = @blog.title
      @seo_keywords = @blog.title
    else
@@ -106,7 +107,7 @@ class BlogsController < ApplicationController
                                 )
     end
 
-    def set_sidebar_topics
-      @side_bar_topics = Topic.with_blogs
+    def set_topics
+      @nav_topics = Topic.with_blogs
     end
 end
