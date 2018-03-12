@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  resources :subscribers
+
   resources :topics, only: [:index, :show]
 
   resources :comments

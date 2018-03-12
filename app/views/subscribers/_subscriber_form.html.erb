@@ -1,0 +1,18 @@
+
+<%= form_for @subscriber do |f| %>
+<div class="row">
+  <div class="col">
+    <%= f.text_field :name, placeholder: "Name", class: "subscriber-form" %>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <%= f.email_field :email, placeholder: "Email", class: "subscriber-form" %>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <%= f.submit 'Sign Up', class: 'btn btn-sm btn-block btn-outline view-blog-button'%>
+  </div>
+  </div>
+<% end %>
