@@ -13,6 +13,7 @@ class BlogsController < ApplicationController
       @blogs = Blog.published.recent.page(params[:page]).per(5)
     end
     @page_title = "Roost and Burrow Blog"
+    @subscriber = Subscriber.new
   end
 
   # GET /blogs/1
@@ -21,7 +22,7 @@ class BlogsController < ApplicationController
     if logged_in?(:site_admin) || @blog.published?
      @blog = Blog.includes(:comments).friendly.find(params[:id])
      @comment = Comment.new
-
+     @subscriber = Subscriber.new
      @page_title = @blog.title
      @seo_keywords = @blog.title
    else

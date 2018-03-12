@@ -359,6 +359,13 @@ transform:scale(1.2);
   border-radius: 2rem;
 }
 
+.subscriber-form{
+  border: hidden;
+  border-bottom: 3px double grey;
+  margin-bottom: 1vw;
+  width: 100%;
+}
+
 //
 // Breadcrumb
 //
@@ -396,8 +403,8 @@ transform:scale(1.2);
 
 .alpha {
   border: 1px solid red;
-  background: image-url('wellness-hover.png');
 }
+
 .beta {
   border: 1px solid green;
 }
@@ -405,6 +412,7 @@ transform:scale(1.2);
 .entry-header .entry-meta {
     border-bottom: 1px solid #eee;
 }
+
 .date-bar-white-bg {
 background: #fff;
 padding: 0 10px;
@@ -423,4 +431,12 @@ font-size: 75%;
 .wellness img:hover {
   background: image-url('wellness-hover.png');
   border: 3px solid blue;
+}
+
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+    outline: none;
 }
