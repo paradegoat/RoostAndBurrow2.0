@@ -18,17 +18,14 @@
   </head>
 
   <body>
-
-    <%= render "shared/blog_nav", location: 'top' %>
+    <%= render "shared/blog_nav"%>
     <%= render 'shared/blog_masthead' %>
-
     <div class="container-fluid">
-
       <div class="row">
         <%= yield %>
         <%= render 'shared/blog_sidebar' %>
       </div>
-
+      <%= render "shared/application_footer" %>
     </div>
 
   </body>
