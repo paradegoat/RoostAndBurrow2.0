@@ -44,5 +44,6 @@ gem 'mini_magick', '~> 4.8'
 gem 'redis', '~> 4.0', '>= 4.0.1'
 gem 'instafeed'
 gem 'popper_js', '~> 1.12', '>= 1.12.9'
+gem 'newrelic_rpm'
 
 ruby "2.4.0"
